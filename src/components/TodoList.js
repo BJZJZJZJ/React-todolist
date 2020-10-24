@@ -3,15 +3,14 @@ import TodoForm from './TodoForm'
 import Todo from './Todo'
 
 function TodoList() {
+    // TodoList 배열 state
     const [todos, setTodos] = useState([]);
 
     const addTodo = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)) return;
 
         const newTodos = [todo, ...todos];
-
         setTodos(newTodos);
-        
     }
 
     const completeTodo = id => {
